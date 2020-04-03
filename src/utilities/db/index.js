@@ -78,10 +78,12 @@ async function initDatabaseAndGetModels() {
     }
 }
 
-module.exports = async function () {
+async function noSeQueNombrePonerle() {
     /** Singleton Pattern */
     if (dbInstance === null) {
         models = await initDatabaseAndGetModels();
     }
     return models;
 }
+
+module.exports = { noSeQueNombrePonerle };
